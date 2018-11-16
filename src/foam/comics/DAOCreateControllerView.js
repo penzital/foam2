@@ -35,9 +35,31 @@ foam.CLASS({
 
   css: `
     ^ .net-nanopay-ui-ActionView {
-      background: #59aadd;
+      float: right;
+      width: 128px;
+      height: 40px;
+      background: #0030f9;;
       color: white;
-      margin-right: 4px;
+      border-radius: 4px;
+      box-shadow: 0 1px 0 0 rgba(22, 29, 37, 0.05);
+      border: solid 1px #4a33f4;
+      font-weight: 500;
+      font-size: 14px;
+      margin: 24px;
+    }
+
+    ^ .createControllerTable {
+      background-color: #fafafa;
+      border-radius: 3px;
+      box-shadow: 0 24px 24px 0 rgba(0, 0, 0, 0.12), 0 0 24px 0 rgba(0, 0, 0, 0.15);
+      border: solid 1px #e2e2e3;
+    }
+    ^ .net-nanopay-ui-ActionView-cancel {
+      background-color: #fafafa;
+      color: #525455;
+      border: none;
+      box-shadow: none;
+      margin-right: 30px;
     }
   `,
 
@@ -71,18 +93,18 @@ foam.CLASS({
     function initE() {
       this.
       addClass(this.myClass()).
-      start('table').
+      start('table').addClass('createControllerTable').
         start('tr').
           start('td').style({'vertical-align': 'top', 'width': '100%'}).
             start('span').
               style({background: 'rgba(0,0,0,0)'}).
               show(this.mode$.map(function(m) { return m == foam.u2.DisplayMode.RW; })).
-              start().
+            end().
+            tag({class: this.detailView}, {data$: this.data$.dot('data')}).
+            start().
                 style({'padding-bottom': '4px'}).
                 add(this.data.cls_.getAxiomsByClass(foam.core.Action)).
               end().
-            end().
-            tag({class: this.detailView}, {data$: this.data$.dot('data')}).
           end().
         end().
       end();
