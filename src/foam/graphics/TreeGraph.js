@@ -164,11 +164,18 @@
              var l = this.childNodes.length;
              for ( var i = 0 ; i < l ; i++ ) {
                var c = this.childNodes[i];
-               if ( i == 0 || i == l-1 ) {
-                line(0, h, c.x, h);
-               }
-               line(c.x, h, c.x, c.y);
-             }
+               var isShadow = c.data.name.indexOf('Shadow') != -1;
+
+             if ( ! isShadow ) {
+              line(0, h, c.x, h);
+              line(c.x, h, c.x, c.y);
+
+              } else {
+                var c0 = this.childNodes[i-1];
+                line(c0.x, c0.y+c.height/2, c.x, c.y+c.height/2);
+              }
+
+                                        }
            }
 
            x.lineWidth = this.borderWidth;
