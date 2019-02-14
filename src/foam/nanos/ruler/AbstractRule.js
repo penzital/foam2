@@ -14,6 +14,13 @@ foam.CLASS({
     'foam.mlang.predicate.Predicate'
   ],
 
+  searchColumns: [
+    'name',
+    'priority',
+    'ruleGroup',
+    'daoKey'
+  ],
+
   documentation: 'Rule model represents rules(actions) that need to be applied in case passed object satisfies provided predicate.',
 
   javaImports: [
@@ -91,7 +98,7 @@ foam.CLASS({
   methods: [
     {
       name: 'f',
-      javaCode: 'return this.f(obj);'
+      javaCode: `return this.f(obj);`
     },
     {
       name: 'applyAction',
@@ -104,16 +111,16 @@ foam.CLASS({
     },
     {
       name: 'prepareStatement',
-      javaCode: ' '
+      javaCode: ` `
     },
     {
       name: 'createStatement',
       type: 'String',
-      javaCode: 'return "";'
+      javaCode: `return "";`
     },
     {
       name: 'partialEval',
-      javaCode: 'return this;',
+      javaCode: `return this;`,
     },
   ]
 });

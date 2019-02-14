@@ -15,6 +15,12 @@
     'foam.core.FObject',
     'foam.core.X'
   ],
+  searchColumns: [
+    'name',
+    'priority',
+    'ruleGroup',
+    'daoKey'
+  ],
 
   properties: [
     {
@@ -43,7 +49,7 @@
   methods: [
     {
       name: 'f',
-      javaCode: 'return getPredicate().f(obj);'
+      javaCode: `return getPredicate().f(obj);`
     }
   ]
 });
