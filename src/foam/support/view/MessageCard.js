@@ -18,7 +18,6 @@ foam.CLASS({
 
   imports: [
     'userDAO',
-    'ticketDAO',
     'ticketMessageDAO'
   ],  
 

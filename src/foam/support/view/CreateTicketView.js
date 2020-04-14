@@ -22,7 +22,6 @@ foam.CLASS({
 
   imports:[
     'ctrl',
-    'ticketDAO',
     'user',
     'hideSummary',
     'stack'
